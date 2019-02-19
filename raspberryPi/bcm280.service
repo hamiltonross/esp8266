@@ -1,0 +1,11 @@
+[Unit]
+Description=bcm280 service
+After=multi-user.target
+ 
+[Service]
+Type=simple
+ExecStart=/usr/bin/python /home/pi/scripts/bme280_sensor.py hub 100
+Restart=on-abort
+ 
+[Install]
+WantedBy=multi-user.target
